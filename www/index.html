@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+    <head>
+        <title>RRR Recorder</title>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+        <link rel="import" href="bower_components/font-roboto/roboto.html">
+        <link rel='import' href="bower_components/core-header-panel/core-header-panel.html">
+        <link rel='import' href="bower_components/core-toolbar/core-toolbar.html">
+        <link rel="import" href="home-card.html">
+        <link rel='import' href="bower_components/paper-tabs/paper-tabs.html">
+        <link rel="import" href="bower_components/core-pages/core-pages.html">
+        <style>
+                        html,body {
+                        height: 100%;
+                        margin: 0;
+                        background-color: #E5E5E5;
+                        font-family: 'RobotoDraft', sans-serif;
+                        }
+                        core-header-panel {
+                        height: 100%;
+                        overflow: auto;
+                        -webkit-overflow-scrolling: touch;
+                        }
+                        core-toolbar {
+                        background: #03a9f4;
+                        color: white;
+                        }
+                        #tabs {
+                        width: 100%;
+                        margin: 0;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                        text-transform: uppercase;
+                        }
+                        .container {
+                        width: 80%;
+                        margin: 50px auto;
+                        }
+                        @media (min-width: 481px) {
+                        #tabs {
+                        width: 200px;
+                        }
+                        .container {
+                        width: 400px;
+                        }
+                        }
+        </style>
+    </head>
+    <body unresolved>
+        <core-header-panel>
+        <core-toolbar>
+        <paper-tabs id="tabs"  self-end>
+        <paper-tab name="all">Home</paper-tab>
+        <paper-tab name="favorites">Record</paper-tab>
+        </paper-tabs>
+        </core-toolbar>
+        <core-pages>
+        <div name="all">
+            <div class="container" layout vertical center>
+
+                <home-card>
+                <img width="70" height="70" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMC8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvVFIvMjAwMS9SRUMtU1ZHLTIwMDEwOTA0L0RURC9zdmcxMC5kdGQnPjxzdmcgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMzIgMzIiIGhlaWdodD0iMzJweCIgaWQ9IkxheWVyXzEiIHZlcnNpb249IjEuMCIgdmlld0JveD0iMCAwIDMyIDMyIiB3aWR0aD0iMzJweCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGc+PHBhdGggZD0iTTE1Ljk5OS0wLjAwM2MtOC44MzksMC0xNi4wMDIsNy4xNjUtMTYuMDAyLDE2LjAwMmMwLDQuMjIzLDEuNjQ4LDguMDUzLDQuMzIxLDEwLjkxMSAgIGMxLjA1OC0xLjI0OCwyLjMyOC0yLjI1OSwzLjc4OC0yLjk5N2MxLjcxNC0wLjg2OSwzLjU1OS0xLjMwOSw1LjQ4Ny0xLjMwOWMzLjA2MSwwLDUuOTg2LDEuMTQzLDguMjM4LDMuMjE5ICAgYzEuMTM3LDEuMDQ5LDIuMDQ5LDIuMjg4LDIuNzIsMy42ODVDMjkuMDIzLDI2LjY2OSwzMiwyMS42ODgsMzIsMTUuOTk5QzMyLDcuMTYyLDI0LjgzNi0wLjAwMywxNS45OTktMC4wMDN6IE0yMy41NzYsMjIuMjEzICAgYy0wLjIwOCwwLjI5OS0wLjU0MiwwLjQ1OC0wLjg3OSwwLjQ1OGMtMC4yMDksMC0wLjQyMS0wLjA2MS0wLjYwNi0wLjE4OWMtMi41MDYtMS43MzgtNS40NDUtMi42NTQtOC40OTctMi42NTQgICBjLTEuNzY3LDAtMy40OTUsMC4zMDMtNS4xMzgsMC45MDZjLTAuNTUzLDAuMjAyLTEuMTY2LTAuMDgyLTEuMzY4LTAuNjM1Yy0wLjIwMy0wLjU1NCwwLjA4LTEuMTY3LDAuNjM1LTEuMzY5ICAgYzEuODc4LTAuNjg4LDMuODU0LTEuMDM4LDUuODcxLTEuMDM4YzMuNDksMCw2Ljg0OCwxLjA1MSw5LjcxMiwzLjAzOEMyMy43OSwyMS4wNjQsMjMuOTEsMjEuNzI5LDIzLjU3NiwyMi4yMTN6IE0yNS45MDMsMTcuMjk0ICAgYy0wLjIzLDAuMzYzLTAuNjE5LDAuNTYzLTEuMDIxLDAuNTYzYy0wLjIxNywwLTAuNDM4LTAuMDU5LTAuNjM1LTAuMTgzYy0zLjE5MS0xLjk5NS02Ljg3NS0zLjA1LTEwLjY1NC0zLjA1ICAgYy0yLjEsMC00LjE3MSwwLjMyNC02LjE1OSwwLjk2MWMtMC42MjgsMC4yMDItMS4zMDUtMC4xNDYtMS41MDYtMC43NzZjLTAuMjA0LTAuNjMyLDAuMTQ0LTEuMzA4LDAuNzc1LTEuNTEgICBjMi4yMjItMC43MTMsNC41NDEtMS4wNzQsNi44OS0xLjA3NGM0LjIyOSwwLDguMzUzLDEuMTgsMTEuOTI2LDMuNDEzQzI2LjA4MiwxNS45OTEsMjYuMjU0LDE2LjczMSwyNS45MDMsMTcuMjk0eiBNMjcuMDc3LDEzLjAyNSAgIGMtMC4yMjgsMC0wLjQ2MS0wLjA2LTAuNjc1LTAuMTg0Yy0zLjg2OS0yLjI3My04LjMtMy40NzUtMTIuODA5LTMuNDc1Yy0yLjQzOCwwLTQuODUyLDAuMzQ3LTcuMTc0LDEuMDI5ICAgYy0wLjcwNSwwLjIxLTEuNDQ3LTAuMTk1LTEuNjU1LTAuOTAxQzQuNTU4LDguNzg5LDQuOTYyLDguMDQ4LDUuNjY3LDcuODM5QzguMjM0LDcuMDg0LDEwLjksNi43LDEzLjU5NCw2LjcgICBjNC45ODMsMCw5Ljg4MSwxLjMyOCwxNC4xNjEsMy44NDFjMC42MzUsMC4zNzMsMC44NDYsMS4xOSwwLjQ3NSwxLjgyNkMyNy45OCwxMi43ODksMjcuNTM1LDEzLjAyNSwyNy4wNzcsMTMuMDI1eiIgZmlsbD0iIzc4Qjg0MiIvPjxwYXRoIGQ9Ik0xMy41OTQsMjguMjQ5Yy0xLjAzMSwwLTIuMDIsMC4yMzQtMi45MzcsMC42OTljLTAuNjgsMC4zNDctMS4yODUsMC44MDEtMS44MDMsMS4zNTQgICBDMTEuMDA2LDMxLjM3OSwxMy40MjgsMzIsMTUuOTk5LDMyYzEuMTM1LDAsMi4yNDQtMC4xMjMsMy4zMTQtMC4zNDdjLTAuMzQ0LTAuNjI5LTAuNzgxLTEuMTkyLTEuMzA5LTEuNjggICBDMTYuNzk5LDI4Ljg2MSwxNS4yMzIsMjguMjQ5LDEzLjU5NCwyOC4yNDl6IiBmaWxsPSIjNzhCODQyIi8+PC9nPjxnLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjwvc3ZnPg==" alt="">
+                <h2>Read-er</h2>
+                <p>
+                	This is read-record-replay app. Visit our web site at www.readrecordreplay.org
+                	for more information.
+                </p>
+                </home-card>
+
+            </div>
+
+        </div>
+        <div name="favorites">
+            <div class="container" layout vertical center>
+
+                <home-card>
+                <img width="70" height="70" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE0MS43MzIgMTQxLjczMiIgaGVpZ2h0PSIxNDEuNzMycHgiIGlkPSJMaXZlbGxvXzEiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDE0MS43MzIgMTQxLjczMiIgd2lkdGg9IjE0MS43MzJweCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgaWQ9IkxpdmVsbG9fNyI+PHBhdGggZD0iTTkxLjE5Miw1OS42MjNWMjEuOTQ2YzAuMDQzLTAuNTM0LDAuMDY4LTEuMDczLDAuMDY4LTEuNjE4QzkxLjI2Miw5LjEwMiw4Mi4xNjEsMCw3MC45MzUsMCAgIGMtMTEuMjI5LDAtMjAuMzMsOS4xMDQtMjAuMzMsMjAuMzI4YzAsMC41NDUsMC4wMjQsMS4wODQsMC4wNjYsMS42MTh2MzcuNjc3Yy0wLjA0MiwwLjUzNS0wLjA2NiwxLjA3My0wLjA2NiwxLjYyMSAgIGMwLDExLjIyOSw5LjEwMywyMC4zMjYsMjAuMzI5LDIwLjMyNmMxMS4yMjcsMCwyMC4zMjctOS4xLDIwLjMyNy0yMC4zMjZDOTEuMjYyLDYwLjY5Niw5MS4yMzUsNjAuMTU4LDkxLjE5Miw1OS42MjMgICAgTTEyMC45NDIsNTAuMjE5YzAtMy4wODQtMi41LTUuNTg0LTUuNTg0LTUuNTg0Yy0zLjA4MiwwLTUuNTgyLDIuNS01LjU4Miw1LjU4NGMwLDAuMDQ3LDAuMDA0LDAuMDkyLDAuMDA4LDAuMTM5ICAgYy0wLjA3NiwyMS40My0xNy40NzEsMzguNzc5LTM4LjkxNywzOC43NzljLTIxLjQ0OCwwLTM4Ljg0Mi0xNy4zNTMtMzguOTE3LTM4Ljc3OWMwLjAwMi0wLjA0NywwLjAwOC0wLjA5MiwwLjAwOC0wLjEzOSAgIGMwLTMuMDg0LTIuNS01LjU4NC01LjU4NC01LjU4NHMtNS41ODUsMi41LTUuNTg1LDUuNTg0YzAsMjUuNzE0LDE5LjM4OCw0Ni44OTYsNDQuMzM5LDQ5Ljc0M3YyOC42NDhIMzguNzggICBjLTIuOTYsMC01LjM1OCwyLjQwMi01LjM1OCw1LjM2MWMwLDIuOTYxLDIuMzk4LDUuMzU1LDUuMzU4LDUuMzU1aDI2LjM1aDExLjYxaDI2LjM1YzIuOTU5LDAsNS4zNTctMi4zOTYsNS4zNTctNS4zNTUgICBjMC0yLjk1OS0yLjM5OC01LjM2MS01LjM1Ny01LjM2MWgtMjYuMzVWOTkuOTQ1QzEwMS42MjgsOTcuMDM5LDEyMC45NDIsNzUuODg1LDEyMC45NDIsNTAuMjE5Ii8+PC9nPjxnIGlkPSJMaXZlbGxvXzFfMV8iLz48L3N2Zz4=" alt="">
+                <h2>Record</h2>
+                </home-card>
+
+				<div style="margin: 10px"></div>
+				<home-card>
+                <img width="70" height="70" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIzMnB4IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48dGl0bGUvPjxkZXNjLz48ZGVmcy8+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSI+PGcgZmlsbD0iIzE1N0VGQiIgaWQ9Imljb24tOTMtaW5ib3gtdXBsb2FkIj48cGF0aCBkPSJNMTYsNiBMMTIuNzUsOS4yNSBMMTIsOC41IEwxNi41LDQgTDIxLDguNSBMMjAuMjUsOS4yNSBMMTcsNiBMMTcsMTcgTDE2LDE3IEwxNiw2IEwxNiw2IFogTTIxLDE5IEwyNy43NzUwMjQ0LDE5IEwyMy40MDAwMjQ0LDEyIEwxOCwxMiBMMTgsMTEgTDI0LDExIEwyOSwxOSBMMjksMjAgTDI5LDI4IEw0LDI4IEw0LDE5IEw5LDExIEwxNSwxMSBMMTUsMTEgTDE1LDEyIEw5LjU5OTk3NTU5LDEyIEw1LjIyNDk3NTU5LDE5IEwxMiwxOSBMMTIsMjEgQzEyLDIyLjEwNDU2OTUgMTIuODk1ODU3OCwyMyAxMy45OTczOTE3LDIzIEwxOS4wMDI2MDgzLDIzIEMyMC4xMDU3MzczLDIzIDIxLDIyLjExMjI3MDQgMjEsMjEgTDIxLDE5IEwyMSwxOSBMMjEsMTkgWiIgaWQ9ImluYm94LXVwbG9hZCIvPjwvZz48L2c+PC9zdmc+" alt="">
+                <h2>Upload</h2>
+                </home-card>
+            </div>
+        </div>
+        </core-pages>
+        </core-header-panel>
+        <script>
+        var tabs = document.querySelector('paper-tabs');
+        var pages = document.querySelector('core-pages');
+        tabs.addEventListener('core-select',function(){
+        console.log(tabs.selected);
+        pages.selected = tabs.selected;
+        console.log("pages....");
+        console.log(pages.selected);
+        });
+        </script>
+    </body>
+</html>
