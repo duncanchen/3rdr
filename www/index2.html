@@ -83,12 +83,12 @@
                         <h2>Record</h2>
                     </home-card>
 
-
-                    <input type="button" onclick="startRecording()" value="START" />
-
-                    <input type="button" onclick="alert('fdsfd');" value="END" />
-
-
+                    
+                    <input type="button" onclick="alert('fdsfd');" value="START"/>
+                    
+                    <input type="button" onclick="alert('fdsfd');" value="END"/>
+                    
+                    
                     <div style="margin: 10px"></div>
                     <home-card>
                         <img width="70" height="70" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIzMnB4IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48dGl0bGUvPjxkZXNjLz48ZGVmcy8+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSI+PGcgZmlsbD0iIzE1N0VGQiIgaWQ9Imljb24tOTMtaW5ib3gtdXBsb2FkIj48cGF0aCBkPSJNMTYsNiBMMTIuNzUsOS4yNSBMMTIsOC41IEwxNi41LDQgTDIxLDguNSBMMjAuMjUsOS4yNSBMMTcsNiBMMTcsMTcgTDE2LDE3IEwxNiw2IEwxNiw2IFogTTIxLDE5IEwyNy43NzUwMjQ0LDE5IEwyMy40MDAwMjQ0LDEyIEwxOCwxMiBMMTgsMTEgTDI0LDExIEwyOSwxOSBMMjksMjAgTDI5LDI4IEw0LDI4IEw0LDE5IEw5LDExIEwxNSwxMSBMMTUsMTEgTDE1LDEyIEw5LjU5OTk3NTU5LDEyIEw1LjIyNDk3NTU5LDE5IEwxMiwxOSBMMTIsMjEgQzEyLDIyLjEwNDU2OTUgMTIuODk1ODU3OCwyMyAxMy45OTczOTE3LDIzIEwxOS4wMDI2MDgzLDIzIEMyMC4xMDU3MzczLDIzIDIxLDIyLjExMjI3MDQgMjEsMjEgTDIxLDE5IEwyMSwxOSBMMjEsMTkgWiIgaWQ9ImluYm94LXVwbG9hZCIvPjwvZz48L2c+PC9zdmc+" alt="">
@@ -96,47 +96,14 @@
                     </home-card>
                 </div>
             </div>
-        </core-pages>
+        </core-pages> 
     </core-header-panel>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-
+        <script src="js/deviceCheck.js" type="text/javascript"></script>
+    <script src="js/mediaHandlers.js" type="text/javascript"></script>
     <script>
-        // audio recording 
-
-         // capture callback
-        var captureSuccess = function (mediaFiles) {
-            var i, path, len;
-            for (i = 0, len = mediaFiles.length; i < len; i += 1) {
-                path = mediaFiles[i].fullPath;
-                // do something interesting with the file
-                console.log(path);
-            }
-        };
-
-         // capture error callback
-        var captureError = function (error) {
-            navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
-        };
-
-         // start audio capture
-
-        function startRecording() {
-
-            navigator.device.capture.captureAudio(captureSuccess, captureError, {
-                limit: 1
-            });
-
-        }
-
-
-
-
-
-
-
-
         var tabs = document.querySelector('paper-tabs');
         var pages = document.querySelector('core-pages');
         tabs.addEventListener('core-select', function () {
@@ -145,8 +112,9 @@
             console.log("pages....");
             console.log(pages.selected);
         });
-
+        
         app.initialize();
+        
     </script>
 </body>
 
